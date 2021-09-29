@@ -1,6 +1,12 @@
 ﻿<?php
-	$login = $_POST['name'];
-	$password = $_POST['password'];
+	if ($method === 'POST'){
+		$login = $_POST['name'];
+		$password = $_POST['password'];
 	
-	echo "Hello world";
+		echo "Hello world";
+	}
+	if ($method === 'GET'){
+		echo "GET";
+	}
+	echo "hi";
 ?>

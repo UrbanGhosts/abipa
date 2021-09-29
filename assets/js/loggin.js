@@ -3,11 +3,13 @@ $("#enter").on("click", function () {
 	var name = $("#username").val();
 	var password = $("#password").val();
 	window.console.log('name: ' + name + ', pass: ' + password);
-	
+
+	return;
 	$.ajax({
 		url: 'assets/js/test.php',
 		type: 'POST',
 		cache: false,
+		headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
 		data: { 'name': name, 'password': password },
 		dataType: 'text',
 		beforeSend: function () {
@@ -18,7 +20,7 @@ $("#enter").on("click", function () {
 			alert(data);
 		},
 		error: function (data) {
-			window.console.log(data.responseText);
+			window.console.log(data.status + ": " + data.statusText);
 		},
 	});
 });
