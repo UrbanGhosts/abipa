@@ -1,10 +1,11 @@
 $("#enter").on("click", function () {
-
+	
 	var name = $("#username").val();
 	var password = $("#password").val();
+	return;
 	window.console.log('name: ' + name + ', pass: ' + password);
 
-	return;
+	
 	$.ajax({
 		url: 'assets/js/test.php',
 		type: 'POST',
