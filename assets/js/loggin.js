@@ -7,8 +7,7 @@ $("#enter").on("click", function () {
 		url: 'assets/js/test.php',
 		type: 'GET',
 		cache: false,
-		headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-		data: { 'name': name, 'password': password },
+		//data: { 'name': name, 'password': password },
 		dataType: 'text',
 		beforeSend: function () {
 			$("#enter").prop('disabled', true);
