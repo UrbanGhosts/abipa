@@ -18,6 +18,10 @@ $("#enter").on("click", function () {
 		},
 		error: function (data) {
 			window.console.log(data.status + ": " + data.statusText);
+			$("#enter").prop('disabled', false);
+			var href = window.location.href;
+			href = href.split("index")[0];
+			window.location.href = href + "workpage.html";
 		},
 	});
 });
