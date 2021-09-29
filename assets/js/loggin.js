@@ -14,7 +14,7 @@ $("#enter").on("click", function () {
 			$("#enter").prop('disabled', true);
         },
 		success: function (data) {
-			alert(data);
+			alert("success: " + data);
 		},
 		error: function (data) {
 			window.console.log(data.status + ": " + data.statusText);
