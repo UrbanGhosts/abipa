@@ -6,7 +6,7 @@ $("#enter").on("click", function () {
 	$.ajax({
 		//url: 'assets/js/test.php',
 		url: 'assets/js/test2.cs',
-		type: 'GET',
+		type: 'POST',
 		cache: false,
 		//data: { 'name': name, 'password': password },
 		dataType: 'text',
@@ -15,6 +15,7 @@ $("#enter").on("click", function () {
         },
 		success: function (data) {
 			alert("success: " + data);
+			$("#enter").prop('disabled', false);
 		},
 		error: function (data) {
 			window.console.log(data.status + ": " + data.statusText);
