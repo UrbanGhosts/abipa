@@ -21,6 +21,7 @@ $("#enter").on("click", function () {
 			$("#enter").prop('disabled', false);
 			var href = window.location.href;
 			href = href.split("index")[0];
+			alert(href + "workpage.html");
 			window.location.href = href + "workpage.html";
 		},
 	});
