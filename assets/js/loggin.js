@@ -4,17 +4,16 @@ $("#enter").on("click", function () {
 	var password = $("#password").val();
 	
 	$.ajax({
-		//url: 'assets/js/test.php',
-		url: 'assets/js/test2.cs',
-		type: 'POST',
+		url: 'assets/js/test.php',
+		type: 'GET',
 		cache: false,
-		//data: { 'name': name, 'password': password },
+		data: { 'name': name, 'password': password },
 		dataType: 'text',
 		beforeSend: function () {
 			$("#enter").prop('disabled', true);
         },
 		success: function (data) {
-			alert("success: " + data);
+			window.console.log("success: " + data);
 			$("#enter").prop('disabled', false);
 		},
 		error: function (data) {
