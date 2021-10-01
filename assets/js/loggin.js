@@ -4,7 +4,8 @@ $("#enter").on("click", function () {
 	var password = $("#password").val();
 	
 	$.ajax({
-		url: 'assets/js/test.php',
+		url: 'assets/js/test.js',
+		//url: '/searching',
 		type: 'GET',
 		cache: false,
 		data: { 'name': name, 'password': password },
@@ -14,7 +15,6 @@ $("#enter").on("click", function () {
         },
 		success: function (data) {
 			window.console.log("success: " + data);
-			return;
 			
 			var href = window.location.href;
 			href = href.split("index")[0];
