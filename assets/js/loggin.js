@@ -4,8 +4,8 @@ $("#enter").on("click", function () {
 	var password = $("#password").val();
 	
 	$.ajax({
-		url: 'assets/js/test.js',
-		type: 'POST',
+		url: 'assets/js/test.php',
+		type: 'GET',
 		cache: false,
 		data: { 'name': name, 'password': password },
 		dataType: 'text',
