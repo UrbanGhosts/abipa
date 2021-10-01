@@ -4,8 +4,8 @@ $("#enter").on("click", function () {
 	var password = $("#password").val();
 	
 	$.ajax({
-		url: 'assets/js/test.php',
-		type: 'GET',
+		url: 'assets/js/test.js',
+		type: 'POST',
 		cache: false,
 		data: { 'name': name, 'password': password },
 		dataType: 'text',
@@ -13,10 +13,11 @@ $("#enter").on("click", function () {
 			$("#enter").prop('disabled', true);
         },
 		success: function (data) {
-			$("#enter").prop('disabled', false);
+			window.console.log("success: " + data);
+			return;
+			
 			var href = window.location.href;
 			href = href.split("index")[0];
-			href = href.replace("#", "");
 			window.location.href = href + "workpage.html";
 		},
 		error: function (data) {
