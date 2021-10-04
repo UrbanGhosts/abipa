@@ -5,7 +5,6 @@ $("#enter").on("click", function () {
 	
 	$.ajax({
 		url: 'assets/js/test.php',
-		//url: '/searching',
 		type: 'GET',
 		cache: false,
 		data: { 'name': name, 'password': password },
@@ -14,12 +13,9 @@ $("#enter").on("click", function () {
 			$("#enter").prop('disabled', true);
         },
 		success: function (data) {
-			window.console.log("success: " + data);
-
-			$("#enter").prop('disabled', false);
 			var href = window.location.href;
 			href = href.split("index")[0];
-			href = href.replace('#', '');
+			href = href.replace("#", '');
 			window.location.href = href + "workpage.html";
 		},
 		error: function (data) {
